@@ -5,7 +5,7 @@ Date: 04/01/2022
 */
 
 /* CSS Reset */
-body, header, nav, main, footer, img, h1, ul {
+body, header, nav, main, footer, img, h1, ul, section, aside, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -16,6 +16,11 @@ img {
     max-width: 100%;
     display: block;
 }
+
+/* Style rule for box sizing applies to all elements */  
+* {  
+        box-sizing: border-box; 
+     }
 
 /* Style rules for mobile viewport */
 
@@ -76,6 +81,34 @@ main p {
     font-size: 1.25em;
     color: #373684; 
     font-weight: bold;
+}
+
+aside {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #373684;
+  text-shadow: 3px 3px 10px #8280cb;
+}
+
+figure {
+  position: relative;
+  max-width: 275px;
+  margin: 2% auto;
+  border: 8px solid #373684;
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(55, 54, 132, 0.7);
+  color: #fff;
+  width: 100%;
+  padding: 5% 0;
+  text-align: center;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 /* Style rules for lessons content */
@@ -179,6 +212,17 @@ footer a {
     width: 500px;
     height: 450px;
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+  }
+
+  aside {
+    grid-column: 1 / span 2;
+  }
+
 }
 
 /* Media Query for Desktop Viewport */
@@ -214,6 +258,19 @@ footer a {
     float: left;
     margin: 0 2%;
   }
+
+  .grid {
+    grid-template-columns: auto auto auto auto;
+  }
+
+  figcaption {
+    font-size: 1em;
+  }
+
+  aside {
+    grid-column: 1 / span 4;
+  }
+
 }
 
 /* Media Query for Print */
@@ -225,3 +282,5 @@ footer a {
 }
 
 /* The little questions at the end of this lab don't make sense. In task 2 of Instructions page 3, we created a style rule for the header selector inside the desktop media query. We didn't reate a style rule for selector span/tab-desk at all in this set of lab instructions. And, even when we were working on this same project in different labs, we never creakted a span.tab-desk selector, only .tab-desk. I never saw any step that said to do this, and I've done each lab to the full extent of the instructions. */
+
+/*
